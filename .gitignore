@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+.cache
+.tmp
+dist/
+coverage/
+*.db
+
+cypress/screenshots/
+cypress/videos/
+cypress/fixtures/example*
