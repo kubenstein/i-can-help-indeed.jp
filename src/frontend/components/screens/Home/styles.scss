@@ -1,0 +1,46 @@
+@import "@/components/App/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px;
+  background: $white url("../../../assets/images/backgroundLightStripe.png") 0 0;
+}
+
+.header {
+  & b {
+    color: $blue-indeed;
+  }
+}
+
+.mainMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 740px;
+  height: 400px;
+  background: $white url("../../../assets/images/mainMenuBackground.jpg") 0 0 no-repeat;
+  background-size: cover;
+
+  .button {
+    margin: 12px;
+    padding: 16px 18px 14px;
+    border: solid 1px lighten($orange-indeed, 15%);
+    border-radius: 5px;
+    color: #ecf0f1;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    background: lighten($orange-indeed, 10%);
+    box-shadow: 0px 6px 0px $orange-indeed;
+
+    &:hover {
+      position: relative;
+      top: 4px;
+      box-shadow: 0px 2px 0px #d35400;
+    }
+  }
+}
