@@ -1,0 +1,21 @@
+@import "@/components/App/variables.scss";
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $text-default;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
