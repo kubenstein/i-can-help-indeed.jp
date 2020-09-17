@@ -1,0 +1,60 @@
+@import "@/components/App/variables.scss";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -40px;
+}
+
+.item {
+  position: relative;
+  width: 45%;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 32px 0 32px 0;
+  background-color: $white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: $sd) {
+    width: 100%;
+  }
+
+  & h3 {
+    margin: 10px 0;
+    text-decoration: underline;
+  }
+}
+
+.number {
+  position: absolute;
+  top: -24px;
+  left: 17px;
+  color: $orange-indeed;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.portfolioItem {
+  display: block;
+  color: $orange-indeed;
+  background: $white url("../../../../assets/images/portfolio.gif") 50% 50% no-repeat;
+  background-size: cover;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    overflow: hidden;
+    background: $white;
+    background: linear-gradient(162deg, $white 29%, rgba($white, 0) 79%);
+    content: "";
+  }
+
+  h3 {
+    position: relative;
+  }
+}

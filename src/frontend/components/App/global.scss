@@ -26,4 +26,17 @@ h1 {
   max-width: 1210px;
   margin-right: auto;
   margin-left: auto;
+
+  & :global(.title) {
+    margin: 0;
+    padding: 55px 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  & :global(.subtitle) {
+    display: block;
+    margin: -30px auto 30px;
+    text-align: center;
+  }
 }
