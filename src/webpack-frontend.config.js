@@ -72,7 +72,7 @@ module.exports = {
         test: /\.pdf$/,
         use: [
           {
-            loader: `file-loader?name=files/[name].[ext]&context=${frontendDir}`,
+            loader: `file-loader?name=assets/files/[name].[ext]&context=${frontendDir}`,
           },
         ],
       },
