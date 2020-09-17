@@ -8,7 +8,7 @@ import keziahPointing from "@/assets/images/story/keziahPointing.png";
 import keziahPanic from "@/assets/images/story/keziahPanic.png";
 import keziahLetsDoThis from "@/assets/images/story/keziahLetsDoThis.png";
 
-export default {
+const screenInfos = {
   0: {
     backgroundImage: bgOutside,
     dialog: {
@@ -119,3 +119,13 @@ export default {
     endRoute: "/",
   },
 };
+
+export const imageUrls = [
+  ...new Set([
+    ...Object.keys(screenInfos).map((key) => screenInfos[key].backgroundImage),
+    ...Object.keys(screenInfos).map((key) => screenInfos[key].leftCharacter),
+    ...Object.keys(screenInfos).map((key) => screenInfos[key].rightCharacter),
+  ]),
+].filter((v) => v);
+
+export default screenInfos;

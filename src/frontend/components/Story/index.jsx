@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Button from "@/components/Button";
 import AppearingText from "@/components/AppearingText";
-import screenInfos from "./screenInfos";
+import HiddenImagePreloader from "@/components/HiddenImagePreloader";
+import screenInfos, { imageUrls } from "./screenInfos";
 
 import "./styles.scss";
 
@@ -16,26 +17,29 @@ const Story = () => {
   };
 
   return (
-    <div styleName="canvas" style={{ backgroundImage: `url(${screenInfo.backgroundImage})` }}>
-      {screenInfo.leftCharacter && (
-        <div styleName="leftCharacter" style={{ backgroundImage: `url(${screenInfo.leftCharacter})` }} />
-      )}
-      {screenInfo.rightCharacter && (
-        <div styleName="rightCharacter" style={{ backgroundImage: `url(${screenInfo.rightCharacter})` }} />
-      )}
-
-      <div styleName="dialog">
-        <h3>{screenInfo.dialog.name}</h3>
-        <p>
-          <AppearingText text={screenInfo.dialog.text} />
-        </p>
-        {(screenInfo.next || screenInfo.endRoute) && (
-          <Button onClick={next} styleName="nextBtn">
-            Next -&gt;
-          </Button>
+    <>
+      <HiddenImagePreloader imageUrls={imageUrls} />
+      <div styleName="canvas" style={{ backgroundImage: `url(${screenInfo.backgroundImage})` }}>
+        {screenInfo.leftCharacter && (
+          <div styleName="leftCharacter" style={{ backgroundImage: `url(${screenInfo.leftCharacter})` }} />
         )}
+        {screenInfo.rightCharacter && (
+          <div styleName="rightCharacter" style={{ backgroundImage: `url(${screenInfo.rightCharacter})` }} />
+        )}
+
+        <div styleName="dialog">
+          <h3>{screenInfo.dialog.name}</h3>
+          <p>
+            <AppearingText text={screenInfo.dialog.text} />
+          </p>
+          {(screenInfo.next || screenInfo.endRoute) && (
+            <Button onClick={next} styleName="nextBtn">
+              Next -&gt;
+            </Button>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
