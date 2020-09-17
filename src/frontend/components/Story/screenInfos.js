@@ -116,7 +116,7 @@ const screenInfos = {
       name: "Jakub",
       text: "I’m an engineer! *a tiny smirk appears on Jakub’s face*\n\n“I CAN HELP INDEED!”",
     },
-    endRoute: "/",
+    endRoute: "/game",
   },
 };
 
