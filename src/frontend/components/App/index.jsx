@@ -4,6 +4,7 @@ import qs from "qs";
 import HomeScreen from "@/components/screens/Home";
 import AuthRequiredScreen from "@/components/screens/AuthRequiredScreen";
 import StoryScreen from "@/components/screens/Story";
+import GameScreen from "@/components/screens/Game";
 
 import "./global.scss";
 
@@ -26,6 +27,9 @@ const App = () => {
       <Switch>
         <Route path="/story">
           <StoryScreen />
+        </Route>
+        <Route path="/game">
+          <GameScreen />
         </Route>
         <Route path="/">
           <HomeScreen />
