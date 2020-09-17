@@ -23,7 +23,7 @@ const Button = ({ tag, onClick, children, className, disabled, ...otherProps }) 
 Button.propTypes = {
   tag: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
 };
@@ -31,6 +31,7 @@ Button.propTypes = {
 Button.defaultProps = {
   tag: "button",
   className: "",
+  children: "",
   disabled: false,
   onClick: () => {},
 };
