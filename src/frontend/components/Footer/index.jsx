@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from "react";
 import Button from "@/components/Button";
+import PropTypes from "prop-types";
 
 import "./styles.scss";
 
-const Footer = () => (
-  <div styleName="footer">
+const Footer = ({ className }) => (
+  <div styleName="footer" className={className}>
     <div className="innerSection">
       <div styleName="texts">
         <p styleName="about">
@@ -61,5 +62,13 @@ const Footer = () => (
     </div>
   </div>
 );
+
+Footer.propTypes = {
+  className: PropTypes.string,
+};
+
+Footer.defaultProps = {
+  className: "",
+};
 
 export default Footer;

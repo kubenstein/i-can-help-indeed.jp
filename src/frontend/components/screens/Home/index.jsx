@@ -15,7 +15,7 @@ const HomeScreen = () => (
     <ReasonsToHire />
     <Demo />
     <Faq />
-    <Footer />
+    <Footer styleName="footer" />
   </div>
 );
 
