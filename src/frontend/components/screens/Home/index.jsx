@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import GameSection from "./GameSection";
 import ReasonsToHire from "./ReasonsToHire";
 import Demo from "./Demo";
@@ -14,6 +15,7 @@ const HomeScreen = () => (
     <ReasonsToHire />
     <Demo />
     <Faq />
+    <Footer />
   </div>
 );
 
