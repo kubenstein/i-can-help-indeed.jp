@@ -20,3 +20,10 @@ body {
 h1 {
   margin: 0;
 }
+
+:global(.innerSection) {
+  width: calc(100% - 40px);
+  max-width: 1210px;
+  margin-right: auto;
+  margin-left: auto;
+}
