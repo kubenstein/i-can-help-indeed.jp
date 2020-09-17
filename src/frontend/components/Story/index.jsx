@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import Button from "@/components/Button";
+import AppearingText from "@/components/AppearingText";
 
 import img1 from "@/assets/images/story/background.jpg";
 import character from "@/assets/images/story/character.png";
@@ -49,7 +49,9 @@ const Story = () => {
 
       <div styleName="dialog">
         <h3>{screenInfo.dialog.name}</h3>
-        <p>{screenInfo.dialog.text}</p>
+        <p>
+          <AppearingText text={screenInfo.dialog.text} />
+        </p>
         {(screenInfo.next || screenInfo.endRoute) && (
           <Button onClick={next} styleName="nextBtn">
             Next -&gt;
