@@ -1,0 +1,16 @@
+@import "@/components/App/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 0;
+  background: $purple-dark url("../../../assets/images/backgroundLightStripe.png") 0 0;
+}

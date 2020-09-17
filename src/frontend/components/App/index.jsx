@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import qs from "qs";
 import HomeScreen from "@/components/screens/Home";
 import AuthRequiredScreen from "@/components/screens/AuthRequiredScreen";
+import StoryScreen from "@/components/screens/Story";
 
 import "./global.scss";
 
@@ -23,6 +24,9 @@ const App = () => {
   return isBasicAuthed ? (
     <Router>
       <Switch>
+        <Route path="/story">
+          <StoryScreen />
+        </Route>
         <Route path="/">
           <HomeScreen />
         </Route>
