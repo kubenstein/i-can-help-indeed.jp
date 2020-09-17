@@ -1,33 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import Button from "@/components/Button";
 import AppearingText from "@/components/AppearingText";
+import screenInfos from "./screenInfos";
 
-import img1 from "@/assets/images/story/background.jpg";
-import character from "@/assets/images/story/character.png";
 import "./styles.scss";
-import { useHistory } from "react-router";
-
-const screenInfos = {
-  0: {
-    backgroundImage: img1,
-    leftCharacter: character,
-    dialog: {
-      name: "Person 1",
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ex ex, malesuada nec nisl et, egestas auctor nibh. Sed iaculis a velit ac porttitor. Aenean placerat libero ac diam cursus, nec luctus elit tempus. Duis ornare eu nisl elementum elementum. Curabitur nec dolor viverra, euismod neque eu, iaculis diam",
-    },
-    next: 1,
-  },
-  1: {
-    backgroundImage: img1,
-    rightCharacter: character,
-    dialog: {
-      name: "Person 2",
-      text: "Sure...",
-    },
-    endRoute: "/",
-  },
-};
 
 const Story = () => {
   const history = useHistory();
