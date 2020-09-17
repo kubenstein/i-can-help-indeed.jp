@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "@/components/Button";
 
 import "./styles.scss";
@@ -13,7 +14,9 @@ const GameSection = () => (
     <p>additional description</p>
 
     <div styleName="mainMenu">
-      <Button styleName="button">Story Mode</Button>
+      <Button tag={Link} to="/story" styleName="button">
+        Story Mode
+      </Button>
       <Button styleName="button">Quick Game</Button>
     </div>
   </div>
