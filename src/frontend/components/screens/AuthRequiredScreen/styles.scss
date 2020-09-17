@@ -1,0 +1,24 @@
+@import "@/components/App/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.content {
+  width: 100%;
+  max-width: 570px;
+
+  & img {
+    display: block;
+    width: 160px;
+    margin: 0 auto;
+  }
+
+  & b {
+    color: $orange-indeed;
+  }
+}
