@@ -9,7 +9,10 @@
   },
   "scripts": {
     "dev": "yarn run dev:frontend",
-    "dev:frontend": "webpack-dev-server --config ./src/webpack-frontend.config.js --port 3000"
+    "dev:frontend": "webpack-dev-server --config ./src/webpack-frontend.config.js --port 3000",
+    "build": "rm -rf ./dist/ ; NODE_ENV=production webpack --config ./src/webpack-frontend.config.js ; NODE_ENV=production webpack --config ./src/webpack-backend.config.js",
+    "heroku-postbuild": "yarn run build",
+    "server": "NODE_ENV=production pm2 start ./dist/backend/bundled-server-runner.js --no-daemon -i max"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -56,5 +59,10 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pm2": "^4.4.1"
   }
 }

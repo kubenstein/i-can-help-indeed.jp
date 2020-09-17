@@ -64,7 +64,7 @@ const ReasonsToHire = () => (
         styleName="item portfolioItem"
         target="_blank"
         rel="nofollow"
-        href="/files/jakub-niewczas-sr-frontend-engineer.pdf"
+        href="/assets/files/jakub-niewczas-sr-frontend-engineer.pdf"
       >
         <span styleName="number">06</span>
         <h3>Open Potfolio / CV</h3>
