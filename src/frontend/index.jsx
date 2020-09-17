@@ -1,9 +1,9 @@
 import "./polyfills";
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "@/components/App";
 
+import "./assets/jakub-niewczas-sr-frontend-engineer.pdf";
 import "./index.html";
 
-import HelloHorld from "@/components/HelloHorld";
-
-ReactDOM.render(<HelloHorld />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));

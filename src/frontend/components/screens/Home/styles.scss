@@ -1,0 +1,10 @@
+@import "@/components/App/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px;
+  background: $white url("../../../assets/images/backgroundLightStripe.png") 0 0;
+}

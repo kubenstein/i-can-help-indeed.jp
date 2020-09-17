@@ -1,0 +1,14 @@
+@import "@/components/App/variables.scss";
+
+.plain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
