@@ -10,6 +10,7 @@ export default (gameEngine, { x, y }) => {
 
   if (tile === tiles.noPipe) {
     board[y][x] = nextPipe;
+    gameEngine.dispatch("PIPE_USED");
   }
 
   return state;
