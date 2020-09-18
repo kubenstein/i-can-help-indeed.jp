@@ -11,19 +11,19 @@ export default class GameEngine {
   updateListener = () => {};
 
   initialState() {
-    const { noPipe, pipeNS, pipeEW } = tiles;
+    const { noPipe, pipeNS, pipeEW, start, finish } = tiles;
     return deepCopy({
       running: false,
       timer: 60,
       nextPipes: [pipeNS, pipeEW, pipeNS],
       board: [
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
+        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, start, noPipe],
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
+        [noPipe, finish, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
       ],
     });

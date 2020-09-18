@@ -10,4 +10,6 @@ export const pipes = {
 export const tiles = {
   ...pipes,
   noPipe: "noPipe",
+  start: "start",
+  finish: "finish",
 };
