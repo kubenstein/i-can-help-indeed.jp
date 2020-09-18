@@ -1,6 +1,10 @@
 export const pipes = {
-  pipeWE: "pipeWE",
+  pipeES: "pipeES",
+  pipeEW: "pipeEW",
   pipeNS: "pipeNS",
+  pipeNW: "pipeNW",
+  pipeSE: "pipeSE",
+  pipeSW: "pipeSW",
 };
 
 export const tiles = {

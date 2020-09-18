@@ -11,11 +11,11 @@ export default class GameEngine {
   updateListener = () => {};
 
   initialState() {
-    const { noPipe, pipeWE } = tiles;
+    const { noPipe, pipeNS, pipeEW } = tiles;
     return deepCopy({
       running: false,
       timer: 60,
-      nextPipes: [pipeWE, pipeWE, pipeWE],
+      nextPipes: [pipeNS, pipeEW, pipeNS],
       board: [
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
         [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],

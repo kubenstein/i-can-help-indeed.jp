@@ -96,12 +96,23 @@
   /* intentionally left empty */
 }
 
-.pipeWE {
-  background: url("../../assets/images/game/pipeWE.png");
+.pipeES {
+  background: url("../../assets/images/game/pipeES.png");
 }
-
+.pipeEW {
+  background: url("../../assets/images/game/pipeEW.png");
+}
 .pipeNS {
   background: url("../../assets/images/game/pipeNS.png");
+}
+.pipeNW {
+  background: url("../../assets/images/game/pipeNW.png");
+}
+.pipeSE {
+  background: url("../../assets/images/game/pipeSE.png");
+}
+.pipeSW {
+  background: url("../../assets/images/game/pipeSW.png");
 }
 
 .nextPipe {
