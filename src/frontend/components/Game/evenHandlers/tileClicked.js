@@ -1,4 +1,4 @@
-import tileDefinitions from "../tileDefinitions";
+import { tiles } from "../tileDefinitions";
 
 export default (gameEngine, { x, y }) => {
   const state = gameEngine.getState();
@@ -8,7 +8,7 @@ export default (gameEngine, { x, y }) => {
   const nextPipe = nextPipes[0];
   const tile = board[y][x];
 
-  if (tile === tileDefinitions.noPipe) {
+  if (tile === tiles.noPipe) {
     board[y][x] = nextPipe;
   }
 

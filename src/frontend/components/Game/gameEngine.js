@@ -1,5 +1,5 @@
 import eventHandlers from "./evenHandlers";
-import tileDefinitions from "./tileDefinitions";
+import { tiles } from "./tileDefinitions";
 
 const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -11,7 +11,7 @@ export default class GameEngine {
   updateListener = () => {};
 
   initialState() {
-    const { noPipe, pipeWE } = tileDefinitions;
+    const { noPipe, pipeWE } = tiles;
     return deepCopy({
       running: false,
       timer: 60,
