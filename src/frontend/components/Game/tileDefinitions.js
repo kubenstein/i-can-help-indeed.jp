@@ -1,5 +1,6 @@
 export const pipes = {
   pipeWE: "pipeWE",
+  pipeNS: "pipeNS",
 };
 
 export const tiles = {
