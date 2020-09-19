@@ -22,6 +22,8 @@ const GameEngineReactBridge = () => {
   return (
     <GameUI
       timer={reactiveGameState.timer}
+      points={reactiveGameState.points}
+      status={reactiveGameState.status}
       board={reactiveGameState.board}
       nextPipes={reactiveGameState.nextPipes}
       startGame={startGame}

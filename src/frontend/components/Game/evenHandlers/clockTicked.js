@@ -5,7 +5,10 @@ export default (gameEngine) => {
 
   if (state.status === statuses.building) state.timer -= 1;
   if (state.status === statuses.building && state.timer === 0) state.status = statuses.running;
-  if (state.status === statuses.running) gameEngine.dispatch("WATER_FLOWED");
+  if (state.status === statuses.running) {
+    state.points += 1;
+    gameEngine.dispatch("WATER_FLOWED");
+  }
 
   return state;
 };

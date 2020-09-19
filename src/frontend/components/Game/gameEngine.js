@@ -16,6 +16,7 @@ export default class GameEngine {
     return deepCopy({
       status: statuses.idle,
       timer: 60,
+      points: 0,
       nextPipes: [pipeNS, pipeEW, pipeNS],
       board: [
         [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],

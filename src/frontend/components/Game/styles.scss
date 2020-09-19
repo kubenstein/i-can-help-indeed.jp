@@ -62,12 +62,19 @@
   }
 }
 
-.timer {
+.numbers {
   flex-grow: 0.5;
   align-self: center;
   width: 100px;
-  color: $orange-indeed;
   font-size: 43px;
+
+  &.timer {
+    color: $orange-indeed;
+  }
+
+  &.points {
+    color: $blue-indeed;
+  }
 }
 
 .imgWrapper {
@@ -160,14 +167,16 @@
   background: url("../../assets/images/game/pipeSWFill.png");
 }
 
+.label {
+  display: block;
+  color: $white;
+  font-size: 14px;
+}
+
 .nextPipe {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  & span {
-    color: $white;
-  }
 
   & .imgWrapper {
     border: 5px solid $orange-indeed;
