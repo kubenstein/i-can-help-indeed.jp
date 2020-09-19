@@ -40,7 +40,6 @@ export default (gameEngine) => {
   if (status === statuses.failed) gameEngine.dispatch("GAME_FAILED");
 
   state.board = board;
-  state.status = status;
 
   return state;
 };
