@@ -1,8 +1,9 @@
 import { tiles } from "../tileDefinitions";
+import statuses from "../statuses";
 
 export default (gameEngine, { x, y }) => {
   const state = gameEngine.getState();
-  if (!state.running) return state;
+  if (state.status !== statuses.building) return state;
 
   const { nextPipes, board } = state;
   const nextPipe = nextPipes[0];

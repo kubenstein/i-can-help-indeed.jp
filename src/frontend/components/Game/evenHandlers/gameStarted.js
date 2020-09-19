@@ -1,4 +1,6 @@
+import statuses from "../statuses";
+
 export default (gameEngine) => ({
   ...gameEngine.getState(),
-  running: true,
+  status: statuses.building,
 });

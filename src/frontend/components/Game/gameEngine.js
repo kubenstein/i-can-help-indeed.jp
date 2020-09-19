@@ -1,5 +1,6 @@
 import eventHandlers from "./evenHandlers";
 import { tiles } from "./tileDefinitions";
+import statuses from "./statuses";
 
 const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -13,7 +14,7 @@ export default class GameEngine {
   initialState() {
     const { noPipe, pipeNS, pipeEW, start, finish } = tiles;
     return deepCopy({
-      running: false,
+      status: statuses.idle,
       timer: 60,
       nextPipes: [pipeNS, pipeEW, pipeNS],
       board: [
