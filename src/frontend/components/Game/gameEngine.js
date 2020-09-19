@@ -1,5 +1,5 @@
 import eventHandlers from "./evenHandlers";
-import { tiles } from "./tileDefinitions";
+import { tileTypes, createTile } from "./tile";
 import statuses from "./statuses";
 
 const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
@@ -12,20 +12,21 @@ export default class GameEngine {
   updateListener = () => {};
 
   initialState() {
-    const { noPipe, pipeNS, pipeEW, start, finish } = tiles;
+    const { noPipe, pipeNS, pipeEW, start, finish } = tileTypes;
+    const t = createTile;
     return deepCopy({
       status: statuses.idle,
       timer: 60,
       nextPipes: [pipeNS, pipeEW, pipeNS],
       board: [
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, start, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, finish, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
-        [noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe, noPipe],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(start), t(noPipe)],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
+        [t(noPipe), t(finish), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
+        [t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe), t(noPipe)],
       ],
     });
   }

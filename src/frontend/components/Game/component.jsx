@@ -34,9 +34,9 @@ const GameUI = ({ startGame, timer, board, onTileClick, nextPipes }) => {
       <div styleName="board">
         {board.map((row, y) => (
           <div key={y} styleName="row">
-            {row.map((cellType, x) => (
+            {row.map((tile, x) => (
               <Button key={`${y}${x}`} onClick={() => onTileClick(x, y)} styleName="tileWrapper">
-                <div styleName={`tile ${cellType}`} />
+                <div styleName={`tile ${tile.type}`} />
               </Button>
             ))}
           </div>
@@ -65,7 +65,7 @@ const GameUI = ({ startGame, timer, board, onTileClick, nextPipes }) => {
 GameUI.propTypes = {
   startGame: PropTypes.func,
   timer: PropTypes.number,
-  board: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  board: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.shape)),
   onTileClick: PropTypes.func,
   nextPipes: PropTypes.arrayOf(PropTypes.string),
 };

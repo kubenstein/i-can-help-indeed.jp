@@ -1,4 +1,4 @@
-import { tiles } from "../tileDefinitions";
+import { tileTypes, createTile } from "../tile";
 import statuses from "../statuses";
 
 export default (gameEngine, { x, y }) => {
@@ -9,8 +9,8 @@ export default (gameEngine, { x, y }) => {
   const nextPipe = nextPipes[0];
   const tile = board[y][x];
 
-  if (tile === tiles.noPipe) {
-    board[y][x] = nextPipe;
+  if (tile.type === tileTypes.noPipe) {
+    board[y][x] = createTile(nextPipe);
     gameEngine.dispatch("PIPE_USED");
   }
 

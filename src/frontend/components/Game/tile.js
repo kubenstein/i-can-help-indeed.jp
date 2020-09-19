@@ -1,4 +1,4 @@
-export const pipes = {
+export const pipeTypes = {
   pipeES: "pipeES",
   pipeEW: "pipeEW",
   pipeNS: "pipeNS",
@@ -7,9 +7,13 @@ export const pipes = {
   pipeSW: "pipeSW",
 };
 
-export const tiles = {
-  ...pipes,
+export const tileTypes = {
+  ...pipeTypes,
   noPipe: "noPipe",
   start: "start",
   finish: "finish",
 };
+
+export const createTile = (type) => ({
+  type,
+});

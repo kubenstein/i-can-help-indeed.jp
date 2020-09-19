@@ -1,4 +1,4 @@
-import { pipes as availablePipes } from "../tileDefinitions";
+import { pipeTypes } from "../tile";
 
 const randomElement = (array) => array[Math.floor(Math.random() * array.length)];
 
@@ -6,7 +6,7 @@ export default (gameEngine) => {
   const state = gameEngine.getState();
   const pipes = state.nextPipes;
 
-  const randomPipe = availablePipes[randomElement(Object.keys(availablePipes))];
+  const randomPipe = pipeTypes[randomElement(Object.keys(pipeTypes))];
 
   pipes.shift();
   pipes.push(randomPipe);
