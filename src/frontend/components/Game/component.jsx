@@ -36,7 +36,7 @@ const GameUI = ({ startGame, timer, board, onTileClick, nextPipes }) => {
           <div key={y} styleName="row">
             {row.map((tile, x) => (
               <Button key={`${y}${x}`} onClick={() => onTileClick(x, y)} styleName="tileWrapper">
-                <div styleName={`tile ${tile.type}`} />
+                <div styleName={`tile ${tile.type}${tile.fill ? "Fill" : ""}`} />
               </Button>
             ))}
           </div>
