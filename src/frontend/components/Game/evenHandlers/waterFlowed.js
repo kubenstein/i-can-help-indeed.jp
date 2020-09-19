@@ -1,7 +1,6 @@
+import deepCopy from "@/lib/deepCopy";
 import { tileTypes } from "../tile";
 import statuses from "../statuses";
-
-const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
 const findStart = (board) => {
   for (let y = 0; y < board.length; y += 1) {

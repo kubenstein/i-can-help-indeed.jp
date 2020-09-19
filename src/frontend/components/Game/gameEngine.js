@@ -1,8 +1,7 @@
+import deepCopy from "@/lib/deepCopy";
 import eventHandlers from "./evenHandlers";
 import { tileTypes, createTile } from "./tile";
 import statuses from "./statuses";
-
-const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
 export default class GameEngine {
   state = this.initialState();
