@@ -60,7 +60,9 @@ const tiles = {
   },
   finish: {
     type: "finish",
-    flowOutputFor: {},
+    flowOutputFor: {
+      N: "N",
+    },
   },
 };
 

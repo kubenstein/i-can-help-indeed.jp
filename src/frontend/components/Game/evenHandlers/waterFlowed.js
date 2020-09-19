@@ -1,4 +1,5 @@
 import { tileTypes } from "../tile";
+import statuses from "../statuses";
 
 const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -13,7 +14,8 @@ const findStart = (board) => {
 
 const flowWater = (x, y, from, currentBoard) => {
   const board = deepCopy(currentBoard);
-  if (!board?.[y]?.[x] || board[y][x].type === tileTypes.noPipe) return board;
+
+  if (!board?.[y]?.[x] || !board[y][x].flowOutputFor[from]) return { board, status: statuses.failed };
 
   if (board[y][x].fill) {
     const direction = board[y][x].flowOutputFor[from];
@@ -25,13 +27,21 @@ const flowWater = (x, y, from, currentBoard) => {
     board[y][x].fill = true;
   }
 
-  return board;
+  if (board[y][x].type === tileTypes.finish) return { board, status: statuses.won };
+
+  return { board, status: statuses.running };
 };
 
 export default (gameEngine) => {
   const state = gameEngine.getState();
   const [startX, startY] = findStart(state.board);
-  state.board = flowWater(startX, startY, "N", state.board);
+  const { board, status } = flowWater(startX, startY, "N", state.board);
+
+  if (status === statuses.won) gameEngine.dispatch("GAME_WON");
+  if (status === statuses.failed) gameEngine.dispatch("GAME_FAILED");
+
+  state.board = board;
+  state.status = status;
 
   return state;
 };
