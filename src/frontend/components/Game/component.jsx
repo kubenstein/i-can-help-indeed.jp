@@ -3,24 +3,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "@/components/Button";
 import AppearingText from "@/components/AppearingText";
-import screenInfo from "./screenInfo";
+import screenInfos from "./screenInfos";
 import statuses from "./statuses";
 
 import "./styles.scss";
 
 const GameUI = ({ startGame, status, timer, points, board, onTileClick, nextPipes }) => (
   <div styleName="canvas">
-    {status === statuses.idle && (
+    {[statuses.idle, statuses.won, statuses.failed].includes(status) && (
       <>
-        <div styleName="rightCharacter" style={{ backgroundImage: `url(${screenInfo.rightCharacter})` }} />
+        <div styleName="rightCharacter" style={{ backgroundImage: `url(${screenInfos[status].rightCharacter})` }} />
         <div styleName="dialog">
-          <h3>{screenInfo.dialog.name}</h3>
+          <h3>{screenInfos[status].dialog.name}</h3>
           <p>
-            <AppearingText text={screenInfo.dialog.text} />
+            <AppearingText text={screenInfos[status].dialog.text} />
           </p>
 
           <Button onClick={startGame} styleName="nextBtn">
-            Let&apos;s do this! -&gt;
+            {screenInfos[status].dialog.btn}
           </Button>
         </div>
       </>
