@@ -179,6 +179,27 @@
   }
 }
 
+.pipeNESW {
+  background: url("../../assets/images/game/pipeNESW.png");
+
+  &.fillN,
+  &.fillS {
+    background: url("../../assets/images/game/pipeNESWFillNS.png");
+  }
+
+  &.fillE,
+  &.fillW {
+    background: url("../../assets/images/game/pipeNESWFillEW.png");
+  }
+
+  &.fillN.fillE,
+  &.fillN.fillW,
+  &.fillS.fillE,
+  &.fillS.fillW {
+    background: url("../../assets/images/game/pipeNESWFill.png");
+  }
+}
+
 .label {
   display: block;
   color: $white;

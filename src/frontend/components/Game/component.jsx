@@ -27,6 +27,10 @@ const imageUrlsToPreload = [
   require("@/assets/images/game/pipeNEFill.png").default,
   require("@/assets/images/game/pipeSW.png").default,
   require("@/assets/images/game/pipeSWFill.png").default,
+  require("@/assets/images/game/pipeNESW.png").default,
+  require("@/assets/images/game/pipeNESWFill.png").default,
+  require("@/assets/images/game/pipeNESWFillEW.png").default,
+  require("@/assets/images/game/pipeNESWFillNS.png").default,
 ];
 
 const GameUI = ({ startGame, status, timer, points, board, onTileClick, nextPipes }) => (

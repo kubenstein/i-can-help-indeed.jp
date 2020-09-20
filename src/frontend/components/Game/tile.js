@@ -41,6 +41,15 @@ const pipes = {
       W: "S",
     },
   },
+  pipeNESW: {
+    type: "pipeNESW",
+    flowOutputFor: {
+      N: "S",
+      S: "N",
+      E: "W",
+      W: "E",
+    },
+  },
 };
 
 const tiles = {
