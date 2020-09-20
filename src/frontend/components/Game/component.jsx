@@ -4,9 +4,8 @@ import PropTypes from "prop-types";
 import Button from "@/components/Button";
 import AppearingText from "@/components/AppearingText";
 import HiddenImagePreloader from "@/components/HiddenImagePreloader";
-
+import statuses from "@/lib/gameEngine/statuses";
 import screenInfos from "./screenInfos";
-import statuses from "./statuses";
 
 import "./styles.scss";
 

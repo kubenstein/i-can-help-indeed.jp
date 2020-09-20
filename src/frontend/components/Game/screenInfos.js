@@ -1,7 +1,7 @@
 import keziahSystemIsOld from "@/assets/images/story/keziahSystemIsOld.png";
 import keziahLetsDoThis from "@/assets/images/story/keziahLetsDoThis.png";
 import keziahNeutral from "@/assets/images/story/keziahNeutral.png";
-import statuses from "./statuses";
+import statuses from "@/lib/gameEngine/statuses";
 
 const screenInfos = {
   [statuses.idle]: {

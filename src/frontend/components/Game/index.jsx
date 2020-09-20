@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GameEngine from "./gameEngine";
+import GameEngine from "@/lib/gameEngine";
 import GameUI from "./component";
 
 import "./styles.scss";
