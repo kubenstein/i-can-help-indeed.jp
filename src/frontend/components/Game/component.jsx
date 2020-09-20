@@ -1,15 +1,37 @@
-/* eslint-disable react/no-array-index-key */
+/* eslint-disable global-require, react/no-array-index-key */
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "@/components/Button";
 import AppearingText from "@/components/AppearingText";
+import HiddenImagePreloader from "@/components/HiddenImagePreloader";
+
 import screenInfos from "./screenInfos";
 import statuses from "./statuses";
 
 import "./styles.scss";
 
+const imageUrlsToPreload = [
+  require("@/assets/images/game/start.png").default,
+  require("@/assets/images/game/startFill.png").default,
+  require("@/assets/images/game/finish.png").default,
+  require("@/assets/images/game/finishFill.png").default,
+  require("@/assets/images/game/pipeES.png").default,
+  require("@/assets/images/game/pipeESFill.png").default,
+  require("@/assets/images/game/pipeEW.png").default,
+  require("@/assets/images/game/pipeEWFill.png").default,
+  require("@/assets/images/game/pipeNS.png").default,
+  require("@/assets/images/game/pipeNSFill.png").default,
+  require("@/assets/images/game/pipeNW.png").default,
+  require("@/assets/images/game/pipeNWFill.png").default,
+  require("@/assets/images/game/pipeNE.png").default,
+  require("@/assets/images/game/pipeNEFill.png").default,
+  require("@/assets/images/game/pipeSW.png").default,
+  require("@/assets/images/game/pipeSWFill.png").default,
+];
+
 const GameUI = ({ startGame, status, timer, points, board, onTileClick, nextPipes }) => (
   <div styleName="canvas">
+    <HiddenImagePreloader imageUrls={imageUrlsToPreload} />
     {[statuses.idle, statuses.won, statuses.failed].includes(status) && (
       <>
         <div styleName="rightCharacter" style={{ backgroundImage: `url(${screenInfos[status].rightCharacter})` }} />
