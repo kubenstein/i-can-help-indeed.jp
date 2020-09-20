@@ -17,7 +17,9 @@ const GameSection = () => (
       <Button tag={Link} to="/story" styleName="button">
         Story Mode
       </Button>
-      <Button styleName="button">Quick Game</Button>
+      <Button tag={Link} to="/game" styleName="button">
+        Quick Game
+      </Button>
     </div>
   </div>
 );

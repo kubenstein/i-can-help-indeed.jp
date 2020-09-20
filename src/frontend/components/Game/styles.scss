@@ -1,0 +1,274 @@
+@import "@/components/App/variables.scss";
+
+.canvas {
+  position: relative;
+  display: flex;
+  min-height: 625px;
+  background: #65615d url("../../assets/images/game/bgStone.jpg");
+
+  @media (max-width: $md) {
+    flex-direction: column-reverse;
+  }
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  overflow: auto;
+
+  @media (max-width: $md) {
+    width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tileWrapper {
+  display: block;
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  padding: 0;
+  background: url("../../assets/images/game/bgTile.jpg");
+
+  & .tile {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 120px;
+  padding: 15px 0;
+  text-align: center;
+  background-image: url("../../assets/images/game/bgWood.jpg");
+  background-size: cover;
+
+  @media (max-width: $md) {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+  }
+}
+
+.numbers {
+  flex-grow: 0.5;
+  align-self: center;
+  width: 100px;
+  font-size: 43px;
+
+  &.timer {
+    color: $orange-indeed;
+  }
+
+  &.points {
+    color: $blue-indeed;
+  }
+}
+
+.imgWrapper {
+  box-sizing: content-box;
+  width: 65px;
+  height: 65px;
+  margin-top: 15px;
+  border: 2px solid $grey-dark;
+  background: url("../../assets/images/game/bgTile.jpg") no-repeat 50% 50%;
+  background-size: cover;
+
+  & .pipe {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+
+  @media (max-width: $md) {
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
+  }
+}
+
+.noPipe {
+  /* intentionally left empty */
+}
+
+.start {
+  background: url("../../assets/images/game/start.png");
+
+  &.fillN,
+  &.fillE,
+  &.fillS,
+  &.fillW {
+    background: url("../../assets/images/game/startFill.png");
+  }
+}
+
+.finish {
+  background: url("../../assets/images/game/finish.png");
+
+  &.fillN,
+  &.fillE,
+  &.fillS,
+  &.fillW {
+    background: url("../../assets/images/game/finishFill.png");
+  }
+}
+
+.pipeES {
+  background: url("../../assets/images/game/pipeES.png");
+
+  &.fillE,
+  &.fillS {
+    background: url("../../assets/images/game/pipeESFill.png");
+  }
+}
+
+.pipeEW {
+  background: url("../../assets/images/game/pipeEW.png");
+
+  &.fillE,
+  &.fillW {
+    background: url("../../assets/images/game/pipeEWFill.png");
+  }
+}
+
+.pipeNS {
+  background: url("../../assets/images/game/pipeNS.png");
+
+  &.fillN,
+  &.fillS {
+    background: url("../../assets/images/game/pipeNSFill.png");
+  }
+}
+
+.pipeNW {
+  background: url("../../assets/images/game/pipeNW.png");
+
+  &.fillN,
+  &.fillW {
+    background: url("../../assets/images/game/pipeNWFill.png");
+  }
+}
+
+.pipeNE {
+  background: url("../../assets/images/game/pipeNE.png");
+
+  &.fillN,
+  &.fillE {
+    background: url("../../assets/images/game/pipeNEFill.png");
+  }
+}
+
+.pipeSW {
+  background: url("../../assets/images/game/pipeSW.png");
+
+  &.fillS,
+  &.fillW {
+    background: url("../../assets/images/game/pipeSWFill.png");
+  }
+}
+
+.pipeNESW {
+  background: url("../../assets/images/game/pipeNESW.png");
+
+  &.fillN,
+  &.fillS {
+    background: url("../../assets/images/game/pipeNESWFillNS.png");
+  }
+
+  &.fillE,
+  &.fillW {
+    background: url("../../assets/images/game/pipeNESWFillEW.png");
+  }
+
+  &.fillN.fillE,
+  &.fillN.fillW,
+  &.fillS.fillE,
+  &.fillS.fillW {
+    background: url("../../assets/images/game/pipeNESWFill.png");
+  }
+}
+
+.label {
+  display: block;
+  color: $white;
+  font-size: 14px;
+}
+
+.nextPipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .imgWrapper {
+    border: 5px solid $orange-indeed;
+  }
+}
+
+.dialog {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  padding: 15px;
+  border: 3px solid lighten($blue-indeed, 25%);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: $white;
+  background: $blue-indeed url("../../assets/images/backgroundLightStripe.png") 0 0;
+  background-size: cover;
+
+  & h3 {
+    font-size: 25px;
+  }
+
+  & p {
+    margin-right: -15px;
+    margin-bottom: -15px;
+    padding-right: 15px;
+    overflow: auto;
+    white-space: pre-line;
+
+    @media (max-width: $md) {
+      padding-bottom: 35px;
+    }
+  }
+
+  .nextBtn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    color: $white;
+    background-color: rgba(33, 100, 245, 0.8);
+  }
+}
+
+.rightCharacter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 150px;
+  width: 45%;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: contain;
+
+  @media (max-width: $md) {
+    width: 100%;
+  }
+}
