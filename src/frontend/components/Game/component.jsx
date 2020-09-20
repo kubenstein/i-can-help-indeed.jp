@@ -53,7 +53,16 @@ const GameUI = ({ startGame, status, timer, points, board, onTileClick, nextPipe
         <div key={y} styleName="row">
           {row.map((tile, x) => (
             <Button key={`${y}${x}`} onClick={() => onTileClick(x, y)} styleName="tileWrapper">
-              <div styleName={`tile ${tile.type}${tile.fill ? "Fill" : ""}`} />
+              <div
+                styleName={[
+                  "tile",
+                  tile.type,
+                  tile.filledFrom.N ? "fillN" : "",
+                  tile.filledFrom.E ? "fillE" : "",
+                  tile.filledFrom.S ? "fillS" : "",
+                  tile.filledFrom.W ? "fillW" : "",
+                ].join(" ")}
+              />
             </Button>
           ))}
         </div>

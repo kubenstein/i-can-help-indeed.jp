@@ -72,6 +72,6 @@ export const tileTypes = Object.keys(tiles).reduce((o, k) => ({ ...o, [k]: tiles
 
 export const createTile = (type) => ({
   type,
-  fill: false,
+  filledFrom: { N: false, E: false, S: false, W: false },
   flowOutputFor: tiles[type].flowOutputFor,
 });

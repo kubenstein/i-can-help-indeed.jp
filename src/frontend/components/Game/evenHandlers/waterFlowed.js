@@ -21,14 +21,14 @@ const flowWater = (x, y, from, currentBoard) => {
 
   if (outOfBoard(x, y, board) || notConnected(x, y, from, board)) return { board, status: statuses.failed };
 
-  if (board[y][x].fill) {
+  if (board[y][x].filledFrom[from]) {
     const direction = board[y][x].flowOutputFor[from];
     if (direction === "N") return flowWater(x, y - 1, "S", board);
     if (direction === "E") return flowWater(x + 1, y, "W", board);
     if (direction === "S") return flowWater(x, y + 1, "N", board);
     if (direction === "W") return flowWater(x - 1, y, "E", board);
   } else {
-    board[y][x].fill = true;
+    board[y][x].filledFrom[from] = true;
   }
 
   if (reachedFinish(x, y, board)) return { board, status: statuses.won };
