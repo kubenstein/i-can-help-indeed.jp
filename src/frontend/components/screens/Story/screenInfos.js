@@ -15,6 +15,7 @@ const screenInfos = {
       name: "Jakub",
       text:
         "Ok! here we are! Tokyo Indeed office! I’m going to nail this interview! Skills, mentality, experience, personality, I’m just perfect fit for this UX Frontend role...",
+      btn: "Next ->",
     },
     next: 1,
   },
@@ -24,6 +25,7 @@ const screenInfos = {
       name: "Jakub",
       text:
         "If you believe, no, if you are sure you can help them, it’s your mission to close that deal! Let’s do this!",
+      btn: "Next ->",
     },
     next: 2,
   },
@@ -32,6 +34,7 @@ const screenInfos = {
     dialog: {
       name: "Jakub",
       text: "Keziah and Ivan should be here in a moment...",
+      btn: "Next ->",
     },
     next: 3,
   },
@@ -41,6 +44,7 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text: "Oh Jakub! Hello! Happy to see you again! Thank you for coming to our office. ",
+      btn: "Next ->",
     },
     next: 4,
   },
@@ -51,6 +55,7 @@ const screenInfos = {
       name: "Keziah",
       text:
         "We still have a few minutes till the meeting, how about showing you our office?\n(I couldn't find anime character sprite set that looks like you Ivan, terribly sorry for limiting your presence it the story...)",
+      btn: "Next ->",
     },
     next: 5,
   },
@@ -61,6 +66,7 @@ const screenInfos = {
       name: "Jakub",
       text:
         "Sure! I saw pictures on the Internet, I read alot about work culture in Indeed. It has to be really nice to work in such a company.",
+      btn: "Next ->",
     },
     next: 6,
   },
@@ -70,6 +76,7 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text: "Our lounge and meeting rooms are over there. And here is our kitchen.",
+      btn: "Next ->",
     },
     next: 7,
   },
@@ -79,6 +86,7 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text: "Would you like something for drin... OH NOOOOO!",
+      btn: "Next ->",
     },
     next: 8,
   },
@@ -88,6 +96,7 @@ const screenInfos = {
     dialog: {
       name: "Jakub",
       text: "Keziah what happened! DAIJOBUDESUKA?!!!",
+      btn: "Next ->",
     },
     next: 9,
   },
@@ -97,6 +106,7 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text: "OH NOOO! Pipes are broken!",
+      btn: "Next ->",
     },
     next: 10,
   },
@@ -106,6 +116,7 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text: "Maybe you can help us?",
+      btn: "Next ->",
     },
     next: 11,
   },
@@ -115,17 +126,10 @@ const screenInfos = {
     dialog: {
       name: "Jakub",
       text: "I’m an engineer! *a tiny smirk appears on Jakub’s face*\n\n“I CAN HELP INDEED!”",
+      btn: "Help Keziah and Ivan ->",
     },
-    endRoute: "/game",
+    exit: "/game",
   },
 };
-
-export const imageUrls = [
-  ...new Set([
-    ...Object.keys(screenInfos).map((key) => screenInfos[key].backgroundImage),
-    ...Object.keys(screenInfos).map((key) => screenInfos[key].leftCharacter),
-    ...Object.keys(screenInfos).map((key) => screenInfos[key].rightCharacter),
-  ]),
-].filter((v) => v);
 
 export default screenInfos;

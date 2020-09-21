@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
+import { useHistory } from "react-router";
 import Header from "@/components/Header";
-import Story from "@/components/Story";
+import VisualNovel from "@/components/VisualNovel";
 import Footer from "@/components/Footer";
+
+import screenInfos from "./screenInfos";
 
 import "./styles.scss";
 
 const StoryScreen = () => {
+  const history = useHistory();
+
   useEffect(() => {
     window.scroll({
       top: document.getElementById("gameContent").offsetTop,
@@ -18,7 +23,11 @@ const StoryScreen = () => {
       <Header />
       <div styleName="content" id="gameContent">
         <div className="innerSection">
-          <Story />
+          <VisualNovel
+            screenInfos={screenInfos}
+            initialScreen="0"
+            onExit={(exitRoute) => history.push({ pathname: exitRoute })}
+          />
         </div>
       </div>
       <Footer />

@@ -12,6 +12,7 @@ const screenInfos = {
         "The system looks a bit old... hmm... Anyways we have to restore the pipe by connecting starting and ending valves using those pipe elements. I will help you, good team work right! Let's do this!\nAre you ready?",
       btn: "Let's do this! ->",
     },
+    exit: statuses.building,
   },
   [statuses.won]: {
     rightCharacter: keziahLetsDoThis,
@@ -21,6 +22,7 @@ const screenInfos = {
         "SUBARASHI! Thank you so much for helping us! Let’s count this as your Indeed assignment, you did great Jakub!",
       btn: "Was fun! Let's do this again! ->",
     },
+    exit: statuses.building,
   },
   [statuses.failed]: {
     rightCharacter: keziahNeutral,
@@ -29,6 +31,7 @@ const screenInfos = {
       text: "Hmmm... let’s try again, this time we will succeed for sure! GANBARIMASHOU!",
       btn: "Let's try again! ->",
     },
+    exit: statuses.building,
   },
 };
 
