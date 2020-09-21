@@ -6,12 +6,12 @@ import "./styles.scss";
 
 const GameSection = () => (
   <div styleName="gameSection" className="innerSection">
-    <h1 styleName="header">
+    <h1 className="title" styleName="title">
       &quot;I can help&nbsp;
       <b>Indeed!</b>
       &quot;
     </h1>
-    <p>additional description</p>
+    <p className="subtitle">additional description</p>
 
     <div styleName="mainMenu">
       <Button tag={Link} to="/story" styleName="button">
