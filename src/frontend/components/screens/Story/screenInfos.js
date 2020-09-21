@@ -14,7 +14,7 @@ const screenInfos = {
     dialog: {
       name: "Jakub",
       text:
-        "Ok! here we are! Tokyo Indeed office! I’m going to nail this interview! Skills, mentality, experience, personality, I’m just perfect fit for this UX Frontend role...",
+        "Ok! here we are! Tokyo Indeed office! Skills, mentality, experience, personality, I’m just perfect, natural fit for this UX Frontend role! Let's do this!",
       btn: "Next ->",
     },
     next: 1,
@@ -24,7 +24,7 @@ const screenInfos = {
     dialog: {
       name: "Jakub",
       text:
-        "If you believe, no, if you are sure you can help them, it’s your mission to close that deal! Let’s do this!",
+        "At Virtusize I deal with and handle nearly exactly same set of challenges they face, let's help them. Let's bring them value even before the interview starts!",
       btn: "Next ->",
     },
     next: 2,
@@ -54,7 +54,7 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text:
-        "We still have a few minutes till the meeting, how about showing you our office?\n(I couldn't find anime character sprite set that looks like you Ivan, terribly sorry for limiting your presence it the story...)",
+        "We still have a few minutes till the meeting, how about showing you our office?\n\n(Ivan, I'm terribly sorry for limiting your presence it the story, I just couldn't find anime character sprites that look like you... More of you in the story after wining the game!)",
       btn: "Next ->",
     },
     next: 5,
@@ -65,7 +65,7 @@ const screenInfos = {
     dialog: {
       name: "Jakub",
       text:
-        "Sure! I saw pictures on the Internet, I read alot about work culture in Indeed. It has to be really nice to work in such a company.",
+        "Sure! Would love to! I studied a bit Indeed and it is such a good place to work for. Talented people, challenging tasks, lots of good energy!",
       btn: "Next ->",
     },
     next: 6,
@@ -75,7 +75,8 @@ const screenInfos = {
     leftCharacter: keziahPointing,
     dialog: {
       name: "Keziah",
-      text: "Our lounge and meeting rooms are over there. And here is our kitchen.",
+      text:
+        "That is true, it's really good place to work. We always look for talented and skilled engineers to join our team, that's why I'm very excited for our today's meeting. Over there are lounge and meeting rooms, and here is our kitchen.",
       btn: "Next ->",
     },
     next: 7,
@@ -85,7 +86,7 @@ const screenInfos = {
     rightCharacter: keziahPanic,
     dialog: {
       name: "Keziah",
-      text: "Would you like something for drin... OH NOOOOO!",
+      text: "Would you like something to drin... OH NOOOOO!",
       btn: "Next ->",
     },
     next: 8,
@@ -115,7 +116,7 @@ const screenInfos = {
     rightCharacter: keziahLetsDoThis,
     dialog: {
       name: "Keziah",
-      text: "Maybe you can help us?",
+      text: "We have to fix it! Maybe you can help us?",
       btn: "Next ->",
     },
     next: 11,
