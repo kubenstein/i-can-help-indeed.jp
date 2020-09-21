@@ -29,7 +29,11 @@ const VisualNovel = ({ screenInfos, initialScreen, onExit, className }) => {
   return (
     <>
       <HiddenImagePreloader imageUrls={imageUrls} />
-      <div className={className} styleName="canvas" style={{ backgroundImage: `url(${screenInfo.backgroundImage})` }}>
+      <div
+        className={className}
+        styleName="canvas"
+        style={{ ...(screenInfo.backgroundImage && { backgroundImage: `url(${screenInfo.backgroundImage})` }) }}
+      >
         {screenInfo.leftCharacter && (
           <div styleName="leftCharacter" style={{ backgroundImage: `url(${screenInfo.leftCharacter})` }} />
         )}
