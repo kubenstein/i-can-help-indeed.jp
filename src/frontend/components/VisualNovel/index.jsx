@@ -6,7 +6,7 @@ import HiddenImagePreloader from "@/components/HiddenImagePreloader";
 
 import "./styles.scss";
 
-const VisualNovel = ({ screenInfos, initialScreen, onExit }) => {
+const VisualNovel = ({ screenInfos, initialScreen, onExit, className }) => {
   const [screen, setScreen] = useState(initialScreen);
   const screenInfo = screenInfos[screen];
   const next = () => {
@@ -29,7 +29,7 @@ const VisualNovel = ({ screenInfos, initialScreen, onExit }) => {
   return (
     <>
       <HiddenImagePreloader imageUrls={imageUrls} />
-      <div styleName="canvas" style={{ backgroundImage: `url(${screenInfo.backgroundImage})` }}>
+      <div className={className} styleName="canvas" style={{ backgroundImage: `url(${screenInfo.backgroundImage})` }}>
         {screenInfo.leftCharacter && (
           <div styleName="leftCharacter" style={{ backgroundImage: `url(${screenInfo.leftCharacter})` }} />
         )}
@@ -57,10 +57,12 @@ VisualNovel.propTypes = {
   screenInfos: PropTypes.shape().isRequired,
   initialScreen: PropTypes.string.isRequired,
   onExit: PropTypes.func,
+  className: PropTypes.string,
 };
 
 VisualNovel.defaultProps = {
   onExit: () => {},
+  className: "",
 };
 
 export default VisualNovel;
