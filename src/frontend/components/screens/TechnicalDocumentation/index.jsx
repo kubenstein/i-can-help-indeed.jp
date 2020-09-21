@@ -4,14 +4,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Code from "@/components/Code";
 
-import "./styles.scss";
-
 import flowInfra from "@/assets/images/flowInfra.png";
 import ssl from "@/assets/images/ssl.png";
 import git from "@/assets/images/git.png";
 import sketch from "@/assets/images/sketch.jpg";
 import demoGif from "@/assets/images/demo.gif";
 import demoImg from "@/assets/images/demo.jpg";
+
+import "./styles.scss";
 
 const TechnicalDocumentationScreen = () => {
   useEffect(() => {
@@ -30,7 +30,7 @@ const TechnicalDocumentationScreen = () => {
           <p>Hello Indeed team,</p>
           <p>
             <br />
-            <i>i-can-help-indeed.jp</i> is a connect-pipes-puzzle type of game, wrapped in a gently Visual Novel story.
+            <i>i-can-help-indeed.jp</i> is a connect-pipes-puzzle type of game, wrapped in a gentle Visual Novel story.
             It briefly previews frontend/algorithmic/creativity potential I can bring to the Indeed table. From the
             idea, code and assets, through algorithms, up to devops, everything was made by me to start our relationship
             in a good way.
@@ -86,23 +86,23 @@ const TechnicalDocumentationScreen = () => {
             </li>
             <li>
               <p>
-                Data store - <code>redux</code> slices are responsible for storing all app data. As a vuejs dev,
-                especially enjoying data store layer there - vuex, I ported vuex mentality to redux. Each redux slice
-                follows same structure of getters, actions and mutations. Such a segregation greatly improved code
+                (not used) Data store - <code>redux</code> slices are responsible for storing all app data. As a vuejs
+                dev, especially enjoying data store layer there - vuex, I ported vuex mentality to redux. Each redux
+                slice follows same structure of getters, actions and mutations. Such a segregation greatly improved code
                 scalability and readability.
                 <br />
                 <small>
-                  Note: I found there is no real need for redux in this project as the GameEngine is framwork-agnostic
-                  lib while rest of the app doesn&apos;t really share much data, so using Redux is mostly just to show
-                  off fluency with data stores.
+                  Note: I found there is no real need for redux in this project. The GameEngine is a framwork-agnostic
+                  lib while rest of the app doesn&apos;t really share much data. I added this point just to highlight
+                  fluency and full comfort working with shared data stores. See GameEngine section.
                 </small>
               </p>
             </li>
             <li>
               <p>
-                GameEngine - an independent, framework-agnostic, pure JS code powering the game. It exposes data/actions
-                only api that is later on connected to GameUI react component. More the Game Engine later on in this
-                document.
+                GameEngine - an independent, framework-agnostic, event sourced, pure JS library powering the game. It
+                exposes data/actions only api that is later on connected to GameUI react component. More the Game Engine
+                later on in this document.
               </p>
             </li>
           </ul>
@@ -167,21 +167,59 @@ const TechnicalDocumentationScreen = () => {
 };`}
           </Code>
 
-          <h2>Idea</h2>
+          <h2>Visual Novel</h2>
           <p>
-            During my first interview with Keziah for UX Frontend position at Indeed, a board game as a recruitment
-            assignment was mentioned a few times. I instantly thought it would be very fun and interesting project,
-            exercising both frontend skills and creativity. So I built the game right away..
-            <br />
-            <br />
-            Since the position is heavily about product localisation, not only content but whole UI/UX, I asked myself
-            what are iconic Japanese-only, game related products... So I came up with an idea of making a visual novel
-            game about Keziah, Ivan and myself..
+            <code>&lt;VisualNovel /&gt;</code> component is a <i>state machine</i> with each screen pointing at the next
+            screen. Screens can be wired in infinite loops or they can end with <code>onFinish</code> callback being
+            fired. Below there is an example of screenInfos object:
           </p>
-          <h4>Early ideas and UI sketches</h4>
-          <p>
-            <img src={sketch} alt="data flow" />
-          </p>
+          <Code>
+            {`const screenInfos = {
+  //...
+  [statuses.idle]: {
+    rightCharacter: keziahSystemIsOld,
+    dialog: {
+      name: "Keziah",
+      text:
+        "The system looks a bit old... hmm... Anyways we have to restore the pipe by connecting starting and ending valves using those pipe elements. I will help you, good team work right! Let's do this! Are you ready?",
+      btn: "Let's do this! ->",
+    },
+    exit: statuses.building,
+  },
+
+  [statuses.won]: {
+    rightCharacter: keziahLetsDoThis,
+    dialog: {
+      name: "Keziah",
+      text:
+        "SUBARASHI! Thank you so much for helping us! Let’s count this as your Indeed assignment, you did great Jakub! Ivan what do you think?",
+      btn: "Next ->",
+    },
+    next: "ivanHires",
+  },
+
+  ivanHires: {
+    rightCharacter: keziahLetsDoThis,
+    dialog: {
+      name: "Ivan",
+      text: "Great job Jakub! I'm impressed! Jakub, you are hired!",
+      btn: "Next ->",
+    },
+    next: "thankyou",
+  },
+
+  thankyou: {
+    rightCharacter: keziahLetsDoThis,
+    dialog: {
+      name: "Jakub",
+      text: "Thank you so much Ivan! Thank you so much Keziah!",
+      btn: "Was fun! Let's do this again! ->",
+    },
+    next: statuses.idle,
+  },
+}`}
+          </Code>
+
           <h2>Devops</h2>
           <p>
             The app is hosted on Heroku.
@@ -218,9 +256,27 @@ const TechnicalDocumentationScreen = () => {
 yarn run dev`}
           </Code>
 
+          <h2>Idea</h2>
+          <p>
+            During my first interview with Keziah for UX Frontend position at Indeed, a board game as a recruitment
+            assignment was mentioned a few times. I instantly thought it would be very fun and interesting project,
+            exercising both frontend skills and creativity. So I built the game right away..
+            <br />
+            <br />
+            Since the position is heavily about product localisation, not only content but whole UI/UX, I asked myself
+            what are iconic Japanese-only, game related products...So I came up with an idea of a retro, Visual Novel
+            game so commonly seen in Japan. The game uses green pipes which are yet another strong reference to Japanese
+            gaming culture.
+          </p>
+          <h4>Early ideas and UI sketches</h4>
+          <p>
+            <img src={sketch} alt="sketch" />
+          </p>
+          <br />
           <br />
           <br />
           <h1>Looking forward to connecting with you Indeed team!</h1>
+          <br />
           <br />
           <br />
           <br />
