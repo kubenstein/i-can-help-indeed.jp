@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@/components/Button";
 
-import demoImg1 from "@/assets/images/demo1.jpg";
+import demoGif from "@/assets/images/demo.gif";
 import docsPreview1 from "@/assets/images/docsPreview1.jpg";
 import docsPreview2 from "@/assets/images/docsPreview2.jpg";
 import docsPreview3 from "@/assets/images/docsPreview3.jpg";
@@ -14,7 +14,7 @@ const Demo = () => (
     <div className="innerSection">
       <h3 className="title">Demo Preview</h3>
       <div styleName="demoImages">
-        <img src={demoImg1} alt="demo img 1" />
+        <img src={demoGif} alt="demo" />
       </div>
 
       <h3 className="title">Technical Documentation</h3>
