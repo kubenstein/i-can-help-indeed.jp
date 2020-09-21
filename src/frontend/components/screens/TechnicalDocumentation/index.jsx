@@ -52,10 +52,10 @@ const TechnicalDocumentationScreen = () => {
             </a>
           </p>
           <h2>Demo</h2>
-          <p>
-            <img src={demoGif} alt="demo" style={{ height: 500 }} />
+          <p styleName="demoImgs">
+            <img src={demoGif} alt="demo" />
             <br />
-            <img src={demoImg} alt="demo" style={{ height: 500 }} />
+            <img src={demoImg} alt="demo" />
           </p>
           <h2>The app</h2>
           <p>
