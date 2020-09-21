@@ -26,11 +26,17 @@ const Header = ({ fixed }) => {
                 &nbsp;
               </Button>
               <div styleName="more">
-                <Button tag="a" styleName="menuItem">
-                  About
+                <Button tag={Link} to="/" styleName="menuItem">
+                  Home Page
                 </Button>
-                <Button tag="a" styleName="menuItem">
-                  Technocal DOcumentation
+                <Button tag={Link} to="/technical-documentation" styleName="menuItem">
+                  Technocal Documentation
+                </Button>
+                <Button tag={Link} to="/story" styleName="menuItem">
+                  Story Mode
+                </Button>
+                <Button tag={Link} to="/game" styleName="menuItem">
+                  Game Mode
                 </Button>
               </div>
             </>
