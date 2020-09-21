@@ -6,7 +6,7 @@ import "./styles.scss";
 const faq = [
   {
     q: "What exactly is this page?",
-    a: "This page is a pro-active demo page I made to start our relationship in a good way.",
+    a: "This page is a pro-active demo I made to start our relationship in a good way.",
   },
   {
     q: "Who are you?",
@@ -16,11 +16,11 @@ const faq = [
   {
     q: "Did you make it all by yourself?",
     a:
-      "Yes, this demo page is just a brief preview of my skills and value I can bring to your team. Due to my nearly decade of experience working with big apps, there is much more I can offer both in tech and not-tech space of web dev, so let's talk.\n\nThe demo covers important aspects and best practices of developing a fullstack, scalable, money-related portal.",
+      "Yes, this demo is just a brief preview of my skills and value I can bring to your team. Due to my nearly decade of experience working with big apps, there is much more I can offer both in tech and not-tech space of web dev.",
   },
   {
     q: "Where can I find the source code?",
-    a: "I can show it during our demo. It's also uploaded to my private Github",
+    a: "I can show it during our demo. It's also pushed to my private Github",
   },
   {
     q: "Do you want to join our engineering team then?",
