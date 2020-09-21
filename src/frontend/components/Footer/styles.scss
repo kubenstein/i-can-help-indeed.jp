@@ -11,7 +11,7 @@
   justify-content: space-between;
 
   @media (max-width: $sd) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   & p {
@@ -39,6 +39,7 @@
 .links {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
 
   .link {
     display: flex;
