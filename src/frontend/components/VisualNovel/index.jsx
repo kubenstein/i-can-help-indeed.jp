@@ -1,20 +1,30 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router";
+import React, { useMemo, useState } from "react";
+import PropTypes from "prop-types";
 import Button from "@/components/Button";
 import AppearingText from "@/components/AppearingText";
 import HiddenImagePreloader from "@/components/HiddenImagePreloader";
-import screenInfos, { imageUrls } from "./screenInfos";
 
 import "./styles.scss";
 
-const Story = () => {
-  const history = useHistory();
-  const [screen, setScreen] = useState(0);
+const VisualNovel = ({ screenInfos, initialScreen, onExit }) => {
+  const [screen, setScreen] = useState(initialScreen);
   const screenInfo = screenInfos[screen];
   const next = () => {
-    if (screenInfo.endRoute) return history.push({ pathname: screenInfo.endRoute });
+    if (screenInfo.exit) return onExit(screenInfo.exit);
     return setScreen(screenInfo.next);
   };
+
+  const imageUrls = useMemo(
+    () =>
+      [
+        ...new Set([
+          ...Object.keys(screenInfos).map((key) => screenInfos[key].backgroundImage),
+          ...Object.keys(screenInfos).map((key) => screenInfos[key].leftCharacter),
+          ...Object.keys(screenInfos).map((key) => screenInfos[key].rightCharacter),
+        ]),
+      ].filter((v) => v),
+    [screenInfos]
+  );
 
   return (
     <>
@@ -32,9 +42,9 @@ const Story = () => {
           <p>
             <AppearingText text={screenInfo.dialog.text} />
           </p>
-          {(screenInfo.next || screenInfo.endRoute) && (
+          {(screenInfo.next || screenInfo.exit) && (
             <Button onClick={next} styleName="nextBtn">
-              Next -&gt;
+              {screenInfo.dialog.btn}
             </Button>
           )}
         </div>
@@ -43,4 +53,14 @@ const Story = () => {
   );
 };
 
-export default Story;
+VisualNovel.propTypes = {
+  screenInfos: PropTypes.shape().isRequired,
+  initialScreen: PropTypes.string.isRequired,
+  onExit: PropTypes.func,
+};
+
+VisualNovel.defaultProps = {
+  onExit: () => {},
+};
+
+export default VisualNovel;
