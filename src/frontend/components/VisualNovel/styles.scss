@@ -36,6 +36,7 @@
     padding-right: 15px;
     overflow: auto;
     white-space: pre-line;
+    -webkit-overflow-scrolling: touch;
 
     @media (max-width: $md) {
       padding-bottom: 35px;

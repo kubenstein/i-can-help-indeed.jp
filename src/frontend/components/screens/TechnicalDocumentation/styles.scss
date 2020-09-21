@@ -57,6 +57,7 @@
     margin: 10px 0;
     padding: 3px;
     background-color: $grey-light;
+    -webkit-overflow-scrolling: touch;
   }
 
   & img {
