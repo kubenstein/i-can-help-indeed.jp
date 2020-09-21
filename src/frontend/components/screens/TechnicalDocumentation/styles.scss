@@ -1,0 +1,74 @@
+@import "@/components/App/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Tahoma, Geneva, sans-serif;
+  background: $white url("../../../assets/images/backgroundLightStripe.png") 0 0;
+  background-size: contain;
+
+  & :global(.innerSection) {
+    max-width: 900px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+
+  & h2 {
+    margin: 30px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grey-light;
+  }
+
+  & h3 {
+    margin: 20px 0;
+  }
+
+  & h4 {
+    margin: 40px 0 10px;
+  }
+
+  & p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+
+    & a {
+      color: $text-default;
+    }
+  }
+
+  & ul {
+    padding-inline-start: 40px;
+    list-style-type: disc;
+  }
+
+  & li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+  }
+
+  & code {
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 3px;
+    background-color: $grey-light;
+
+    &.block {
+      display: block;
+      padding: 10px;
+      overflow: auto;
+      white-space: pre;
+    }
+  }
+
+  & img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

@@ -5,6 +5,7 @@ import HomeScreen from "@/components/screens/Home";
 import AuthRequiredScreen from "@/components/screens/AuthRequiredScreen";
 import StoryScreen from "@/components/screens/Story";
 import GameScreen from "@/components/screens/Game";
+import TechnicalDocumentationScreen from "@/components/screens/TechnicalDocumentation";
 
 import "./global.scss";
 
@@ -30,6 +31,9 @@ const App = () => {
         </Route>
         <Route path="/game">
           <GameScreen />
+        </Route>
+        <Route path="/technical-documentation">
+          <TechnicalDocumentationScreen />
         </Route>
         <Route path="/">
           <HomeScreen />
