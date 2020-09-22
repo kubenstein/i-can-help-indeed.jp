@@ -17,6 +17,7 @@
   flex-grow: 1;
   justify-content: center;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   @media (max-width: $md) {
     width: 100%;

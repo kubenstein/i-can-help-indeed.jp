@@ -55,6 +55,7 @@
   height: 50%;
   padding-left: 15px;
   border-left: 1px solid $grey-dark;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -90,6 +91,7 @@
 .menuItem {
   display: block;
   margin: 10px 0;
+  color: inherit;
   font-size: 0.875rem;
   text-align: center;
   text-decoration: none;

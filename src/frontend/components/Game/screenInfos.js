@@ -19,11 +19,31 @@ const screenInfos = {
     dialog: {
       name: "Keziah",
       text:
-        "SUBARASHI! Thank you so much for helping us! Let’s count this as your Indeed assignment, you did great Jakub!",
+        "SUBARASHI! Thank you so much for helping us! Let’s count this as your Indeed assignment, you did great Jakub!\n\nIvan what do you think?",
+      btn: "Next ->",
+    },
+    next: "ivanHires",
+  },
+  ivanHires: {
+    rightCharacter: keziahLetsDoThis,
+    dialog: {
+      name: "Ivan",
+      text: "Great job Jakub! I'm impressed! Jakub, you are hired!",
+      btn: "Next ->",
+    },
+    next: "thankyou",
+  },
+
+  thankyou: {
+    rightCharacter: keziahLetsDoThis,
+    dialog: {
+      name: "Jakub",
+      text: "Thank you so much Ivan! Thank you so much Keziah!",
       btn: "Was fun! Let's do this again! ->",
     },
-    exit: statuses.building,
+    next: statuses.idle,
   },
+
   [statuses.failed]: {
     rightCharacter: keziahNeutral,
     dialog: {
