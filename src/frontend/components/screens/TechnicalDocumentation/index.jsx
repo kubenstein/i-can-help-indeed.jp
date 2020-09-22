@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Code from "@/components/Code";
 
 import "./styles.scss";
 
@@ -126,7 +127,7 @@ const TechnicalDocumentationScreen = () => {
             events and exposes its current state. The engine is responsible for storing a state and dispatching events
             to eventHandlers. EventHandlers are pure functions.
           </p>
-          <code styleName="block">
+          <Code>
             {`dispatch(eventName, payload) {
   setTimeout(() => {
     const eventHandler = eventHandlers[eventName];
@@ -136,7 +137,7 @@ const TechnicalDocumentationScreen = () => {
     }
   }, 0);
 }`}
-          </code>
+          </Code>
           <p>
             Each game tile defines its flow of water by providing <code>flowOutputFor</code> hash. Each tile also
             defines from which direction the stream of water already came in.
@@ -144,7 +145,7 @@ const TechnicalDocumentationScreen = () => {
             Based on those information we can extremely easily recursively build whole chain of pipes. Here is actual
             code of water flowing EventHandler:
           </p>
-          <code styleName="block">
+          <Code>
             {`const flowWater = (x, y, from, currentBoard) => {
   const board = deepCopy(currentBoard);
 
@@ -164,7 +165,7 @@ const TechnicalDocumentationScreen = () => {
 
   return { board, status: statuses.running };
 };`}
-          </code>
+          </Code>
 
           <h2>Idea</h2>
           <p>
@@ -212,11 +213,10 @@ const TechnicalDocumentationScreen = () => {
           </p>
           <h2>Development</h2>
 
-          <code styleName="block">
+          <Code language="bash">
             {`nvm use
-yarn run dev
-`}
-          </code>
+yarn run dev`}
+          </Code>
 
           <br />
           <br />
