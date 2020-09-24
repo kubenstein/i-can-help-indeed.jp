@@ -41,9 +41,9 @@ const TechnicalDocumentationScreen = () => {
             exercising both frontend skills and creativity. So I built the game right away..
             <br />
             <br />
-            Since the position is heavily about product localisation, not only content but whole UI/UX, I asked myself
-            what are iconic Japanese-only, game related products... So I came up with an idea of making a visual novel
-            game about Keziah, Ivan and myself..
+            Since the position is heavily about product localisation, not only content but whole UI/UX, I picked
+            Japanese market for a demo and I asked myself what are iconic Japanese-only, game related products... I came
+            up with an idea of making a visual novel game about Keziah, Ivan and myself..
             <br />
             <br />
             If you want to know the story, well,{" "}

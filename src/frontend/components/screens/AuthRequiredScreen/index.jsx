@@ -13,8 +13,12 @@ const AuthRequiredScreen = ({ onPasswordChange }) => (
       This website is a recruitment assignment I proactively did for Indeed.
       <br />
       <br />
-      As the UX Frontend position is heavily about localising not only content but whole design, I decided to make a
-      game with visual novel flavours.. Thats definitely with a spirit of a Japanese Internet culture.
+      As the UX Frontend position is heavily about localising not only content but whole design, I decided to make
+      something targeting a specific region. I live in Japan so I picked this region because it is such a unique
+      cultural centre.
+      <br />
+      <br />
+      The project I built is a retro, board game with visual novel flavours...
       <br />
       <br />
       <b>To access this page, answer the question below:</b>
