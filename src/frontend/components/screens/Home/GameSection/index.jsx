@@ -19,9 +19,14 @@ const GameSection = () => (
       Keziah, Ivan and me...
       <br />
       <br />
-      It is a recruitment assignment for the UX Frontend position. As the position focuses also on UI/UX localisation, I
-      came up with an idea of a retro, Visual Novel game so commonly seen in Japan. The game uses green pipes which are
-      yet another strong reference to Japanese gaming culture.
+      As the UX Frontend position is heavily about localising not only content but whole design, I decided to make
+      something targeting a specific region. I live in Japan so I picked this region because it is such a unique
+      cultural centre.
+      <br />
+      <br />
+      I came up with an idea of a retro, Visual Novel game so commonly seen in Japan. The game uses green pipes which
+      are yet another strong reference to Japanese gaming culture.
+      <br />
       <br />
       <br />
       This project is a brief preview of frontend skills, algorithmic thinking, creative energy and pro-active nature I
