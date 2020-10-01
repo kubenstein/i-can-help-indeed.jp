@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "yarn run dev:frontend",
     "dev:frontend": "webpack-dev-server --config ./src/webpack-frontend.config.js --port 3000",
-    "build": "rm -rf ./dist/ ; NODE_ENV=production webpack --config ./src/webpack-frontend.config.js ; NODE_ENV=production webpack --config ./src/webpack-backend.config.js",
+    "build": "./scripts/build.sh",
     "heroku-postbuild": "yarn run build",
     "server": "NODE_ENV=production pm2 start ./dist/backend/bundled-server-runner.js --no-daemon -i max"
   },
