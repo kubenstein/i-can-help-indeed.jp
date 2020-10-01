@@ -4,6 +4,7 @@ function main () {
   clean_dist_folder
   build_frontend
   build_backend
+  expose_git_repo
 }
 
 ########
@@ -22,6 +23,16 @@ function build_backend () {
   NODE_ENV=production webpack --config ./src/webpack-backend.config.js
 }
 
+function expose_git_repo () {
+  GIT_REPO_URL=${GIT_REPO_URL:-'.'}
+  git clone $GIT_REPO_URL --bare ./dist/frontend/git
+  (
+    cd ./dist/frontend/git
+    git repack
+    git gc
+    git update-server-info
+  )
+}
 
 # go!
 main
