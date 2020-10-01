@@ -20,7 +20,8 @@ const faq = [
   },
   {
     q: "Where can I find the source code?",
-    a: "I can show it during our demo. It's also pushed to my private Github",
+    a: "To clone the repo type:\n\ngit clone https://www.i-can-help-indeed.jp/git/ jakub-niewczas-i-can-help-indeed",
+    clickableAnswer: true,
   },
   {
     q: "Do you want to join our engineering team then?",
@@ -52,7 +53,9 @@ const Faq = () => {
             key={pair.q}
           >
             <span styleName="question">{pair.q}</span>
-            <span styleName="answer">{pair.a}</span>
+            <Button tag="span" styleName="answer" onClick={(e) => pair.clickableAnswer && e.stopPropagation()}>
+              {pair.a}
+            </Button>
           </Button>
         ))}
       </ul>
